@@ -74,11 +74,10 @@ addNewContact = ({name,number}) => {
   
  }
  componentDidMount(){
-  if(localStorage.length === 0 ){
-    return
-  } else {
-  this.setState({contacts: JSON.parse(localStorage.getItem("contacts"))})}
- }
+  const contactFromLS = localStorage.getItem("contacts")
+  if(contactFromLS){
+  this.setState({contacts: JSON.parse(localStorage.getItem("contacts"))})
+ }}
 
    render(){
     
