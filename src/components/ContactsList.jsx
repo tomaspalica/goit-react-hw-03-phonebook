@@ -1,6 +1,6 @@
 import css from '../css/ContactsList.module.css'
 
-export const ContactsList = ({contacts,filteredNames,contactDelete}) => {
+export const ContactsList = ({filteredNames,contactDelete}) => {
   
   return (  <ul className={css.nameList}>
         {filteredNames.map(({ id, name,number }) => ( 

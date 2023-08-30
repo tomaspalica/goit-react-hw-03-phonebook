@@ -7,8 +7,6 @@ export class App extends Component {
   state = {
     contacts: [],
     filter: '',
-    name: '',
-    number: ''
   }
 
   handleChange = e =>{
@@ -46,7 +44,7 @@ addNewContact = ({name,number}) => {
 
  filterNames = () => {
   const {filter, contacts} = this.state
-  if(!filter){
+  if(filter === ""){
     return contacts
   }
   const filterValue = filter.toLowerCase();
@@ -88,7 +86,7 @@ addNewContact = ({name,number}) => {
 <h2>Contacts</h2>
 
 <Filter handleFilter={this.handleChange}></Filter>
-<ContactsList contacts={this.state.contacts} filteredNames={this.filterNames()} contactDelete={this.contactDelete} ></ContactsList>
+<ContactsList  filteredNames={this.filterNames()} contactDelete={this.contactDelete} ></ContactsList>
 
 </div>
     )
